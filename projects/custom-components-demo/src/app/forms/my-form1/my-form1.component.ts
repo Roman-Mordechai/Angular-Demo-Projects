@@ -21,7 +21,7 @@ export class MyForm1Component implements OnInit {
     });
   }
 
-
+  // Test
   submit() {
     console.log(`Value: ${this.myForm.controls.mySwitch.value}`);
   }
