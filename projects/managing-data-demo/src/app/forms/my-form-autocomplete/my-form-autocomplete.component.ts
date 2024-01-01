@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { merge, Observable, OperatorFunction, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, mergeAll, switchMap, tap } from 'rxjs/operators';
 import { Data01Service } from '../../servicies/data-01.service';
@@ -16,12 +16,12 @@ export class MyFormAutocompleteComponent implements OnInit {
   public empRoleModel: any;
   empRole: Item[]=[];
   formatter = (item: Item) => item.description;
-  employees: FormGroup = Object.create(null);
+  employees: UntypedFormGroup = Object.create(null);
   focus$ = new Subject<any>();
   
   constructor(
     private data01Service: Data01Service,
-    private fb: FormBuilder) { }
+    private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
 
