@@ -244,5 +244,9 @@
       }
     }
   },
-  "defaultProject": "CustomComponentsDemo"
+  "cli": {
+    "cache": {
+      "enabled": false
+    }
+  }
 }
