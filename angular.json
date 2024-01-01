@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CustomComponentsDemo:build"
+            "buildTarget": "CustomComponentsDemo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "CustomComponentsDemo:build:production"
+              "buildTarget": "CustomComponentsDemo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CustomComponentsDemo:build"
+            "buildTarget": "CustomComponentsDemo:build"
           }
         },
         "test": {
@@ -185,18 +185,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "managing-data-demo:build"
+            "buildTarget": "managing-data-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "managing-data-demo:build:production"
+              "buildTarget": "managing-data-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "managing-data-demo:build"
+            "buildTarget": "managing-data-demo:build"
           }
         },
         "test": {
