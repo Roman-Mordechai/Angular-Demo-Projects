@@ -15,23 +15,22 @@ export class Data01Service {
     ) { }
 
   GetEmployeeRoleData(): Observable<any> {
- 
+
     const types =  {
-      "EmployeeRoleTypes" : [
-        { Code: 1, Description: "מנהל" },
-        { Code: 2, Description: "צוות חינוך טיפול" },
-        { Code: 3, Description: "מבשל" },
-        { Code: 4, Description: "נותן שירות" },
-        { Code: 5, Description: "מתגורר במעון" }
+      EmployeeRoleTypes : [
+        { code: 1, description: 'מנהל' },
+        { code: 2, description: 'צוות חינוך טיפול' },
+        { code: 3, description: 'מבשל' },
+        { code: 4, description: 'נותן שירות' },
+        { code: 5, description: 'מתגורר במעון' }
         ]
       };
-  
       return of(types).pipe(delay(3000));
   }
 
   GetCourseData(): Observable<Course[]> {
     const url = '/assets/data/courses.json';
-    
+
     return this.http
       .get(url)
       .pipe(
@@ -39,7 +38,6 @@ export class Data01Service {
         map((data: any) => data.map((item:any) => this.courseAdapter.adapt(item)))
       );
   }
-
 
 
 }

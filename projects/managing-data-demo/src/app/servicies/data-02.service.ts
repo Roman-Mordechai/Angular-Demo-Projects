@@ -24,4 +24,8 @@ export class Data02Service {
       return of(types).pipe(delay(3000));
  
   }
+
+
+
+  
 }

@@ -1,0 +1,49 @@
+
+
+
+<div style="padding-top: 40px;"></div>
+
+<form [formGroup]="employees">
+<div class="container">
+    <div class="row justify-content-md-center p-2 bg-light border">
+        <div class="col-3">
+            <label for="typeahead-basic">Search for a state:</label>
+            <input 
+              id="typeahead-basic" 
+              type="text" 
+              class="form-control" 
+              formControlName="empRole"
+              [ngbTypeahead]="searchItem"
+              [inputFormatter]="formatter"
+              [resultFormatter]="formatter"
+              [editable]='false'
+            />
+            <hr>
+            <pre>selected: {{ employees.value | json }}</pre>
+        </div>
+
+        <div class="col-3">
+          <button type="submit" [disabled]="employees.invalid" (click)="onSubmit();">Submit</button>
+        </div>
+
+    </div>
+
+</div>
+
+</form>
+
+
+<div class="mb-3 row">
+    <label for="typeahead-prevent-manual-entry" class="col-xs-3 col-sm-auto col-form-label">Search for a state:</label>
+    <div class="col">
+      <input id="typeahead-prevent-manual-entry" type="text" class="form-control"
+        [(ngModel)]="empRoleModel"
+        [ngbTypeahead]="searchItem"
+        [inputFormatter]="formatter"
+        [resultFormatter]="formatter"
+        (focus)="focus$.next($any($event.target).value)"
+        [editable]='false' />
+        <hr>
+        <pre>Model: {{ empRoleModel | json }}</pre>        
+    </div>
+</div>
